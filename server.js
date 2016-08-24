@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 var prerender = require('prerender');
+var redisCache = require('./lib/redisCache');
 
 var server = prerender({
     workers: process.env.PRERENDER_NUM_WORKERS,
@@ -12,8 +13,9 @@ server.use(prerender.sendPrerenderHeader());
 // server.use(prerender.blacklist());
 // server.use(prerender.logger());
 server.use(prerender.removeScriptTags());
-// server.use(prerender.httpHeaders());
+server.use(prerender.httpHeaders());
 // server.use(prerender.inMemoryHtmlCache());
 // server.use(prerender.s3HtmlCache());
+server.use(redisCache);
 
 server.start();
