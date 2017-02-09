@@ -12,6 +12,7 @@ Plugins enabled by default:
 - removeScriptTags (*prerender*)
 - httpHeaders (*prerender*)
 - redisCache (*custom - lib/redisCache*)
+- viewPort (*custom - lib/viewPort*)
 
 See [Prerender](https://github.com/prerender/prerender) for more documentation.
 
@@ -24,3 +25,10 @@ See [Prerender](https://github.com/prerender/prerender) for more documentation.
   - **PARAMS_TO_IGNORE** - Defaults to *[]*, query parameters separated by
     whitespace to be ignored, when ignoring a query parameter, we will cache and
     serve a specified URL without using the ignored query parameter.
+
+### ViewPort
+
+  Configuration by environment variables:
+
+  - **VIEWPORT_WIDTH** - Defaults to 1024.
+  - **VIEWPORT_HEIGHT** - Defaults to 1024.
