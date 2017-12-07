@@ -1,0 +1,6 @@
+# Exclude all...
+*
+# ...but
+!lib
+!server.js
+!package.json
